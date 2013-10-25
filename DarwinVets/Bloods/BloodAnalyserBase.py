@@ -20,14 +20,18 @@ class BloodAnalyserBase(threading.Thread):
         Constructor
         '''
         threading.Thread.__init__(self)
+        self.daemon = True
         
         self._running = True
         self._cur_result = None
         
         self._id=bid
-        self._logger = logging.getLogger(self._id)
+        self._logger = logging.getLogger("%10s"%self._id)
+        
+        self.debug("Constructed")
 
     def exit(self):
+        self.debug("Told to exit")
         self._running = False
         
     def registerResultHandler(self, handler):

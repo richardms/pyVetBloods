@@ -35,9 +35,11 @@ class Mythic(BloodAnalyserBase):
         self._inbuf = ""
         
     def run(self):
+        self.debug("Running")
+
         while self._running:
             line = self._readline()
-            
+            self.debug("Got '%s'", line)
             if line == "":
                 continue
             
@@ -47,6 +49,9 @@ class Mythic(BloodAnalyserBase):
                 self._handle_WAIT_RESULT(line)
             elif self._state == "RECV_RESULT":
                 self._handle_RECV_RESULT(line)
+
+        self.debug("Run finished")
+
     
     def _readline(self):
         data = self._inbuf + self._ser.read(16)

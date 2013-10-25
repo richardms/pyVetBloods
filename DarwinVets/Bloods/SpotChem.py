@@ -36,8 +36,10 @@ class SpotChem(BloodAnalyserBase):
         self._data = ''
 
     def run(self):
+        self.debug("Running")
         while self._running:
             rdata = self._ser.read(16)
+            self.debug("Got '%s'", rdata)
             
             if not rdata:
                 continue
@@ -59,6 +61,8 @@ class SpotChem(BloodAnalyserBase):
             if send:
                 self._sendResult()
                 self._result = None
+        self.debug("Run finished")
+
     
     def _handleBlock(self, block, endchar):
         parts=[ s.strip() for s in block.split('\n')]
