@@ -39,10 +39,11 @@ class SpotChem(BloodAnalyserBase):
         self.debug("Running")
         while self._running:
             rdata = self._ser.read(16)
-            self.debug("Got '%s'", rdata)
             
-            if not rdata:
+            if rdata == "":
                 continue
+
+            self.debug("Got '%s'", rdata)
             
             self._data = self._data + rdata
             match = SpotChem._RE_BLOCK.search(self._data)

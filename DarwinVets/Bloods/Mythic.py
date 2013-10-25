@@ -39,10 +39,11 @@ class Mythic(BloodAnalyserBase):
 
         while self._running:
             line = self._readline()
-            self.debug("Got '%s'", line)
             if line == "":
                 continue
             
+            self.debug("Got '%s' in state %s", line, self._state)
+
             if self._state == "WAIT_REQ":
                 self._handle_WAIT_REQ(line)
             elif self._state == "WAIT_RESULT":
