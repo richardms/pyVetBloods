@@ -56,10 +56,12 @@ class SpotChem(BloodAnalyserBase):
             endchar = match.group(2)
             self._data = match.group(3)
             
+            self.debug("Block '%s'", block)
+            
             if self._result is None:
                 self._result = Result()
             
-            send = self._handleBlock(block, endchar)
+            send = self._handleBlock_fmt2(block, endchar)
             if send:
                 self._sendResult()
                 self._result = None
@@ -102,5 +104,34 @@ class SpotChem(BloodAnalyserBase):
          
         return (endchar == "\003")   
     
+    def _handleBlock_fmt2(self, block, endchar):
+        pid  = block[:10].strip()
+        maxc = int(block[13:15].strip())
+        cnt = int(block[16:18].strip())
+        dt  = block[19:33].strip()
+        dt  = datetime.strptime(dt, "%y/%m/%d %H:%M")
+        err = block[34]
+        temp = block[36]
+        multi = block[39:49].strip()
+        param = block[50:55].strip()
+        val   = float(block[56:61].strip())
+        units = block[62:68].strip()
+        
+        print "blk: %s:%d/%d:%s:%s:%s"%(pid, maxc, cnt, dt.ctime(), err, temp)
+        print "     %s:%s:%f %s"%(multi, param, val, units)
+#                 self._result.addParam(self._type, name, {
+#                         val: val,
+#                         units: units,
+#                         level_ind: level_ind,
+#                         temp: temp
+#                     })
+         
+        return (endchar == "\003")   
+    
     def _sendResult(self):
         pass
+    
+    
+if __name__ == '__main__':
+   sc = SpotChem("/dev/ttyUSB0", 9600)
+   sc._handleBlock_fmt2("26872      11 6/ 1 13/10/29 10:37 0 0\n\rPANEL-V    BUN    11.7 mmol/L 0         \n\r","\003")
