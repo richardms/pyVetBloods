@@ -59,7 +59,7 @@ class SpotChem(BloodAnalyserBase):
             self.debug("Block '%s'", block)
             
             if self._result is None:
-                self._result = Result()
+                self._result = Result.Result()
             
             send = self._handleBlock_fmt2(block, endchar)
             if send:
