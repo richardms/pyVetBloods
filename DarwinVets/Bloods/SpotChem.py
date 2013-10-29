@@ -71,7 +71,7 @@ class SpotChem(BloodAnalyserBase):
         
         self.debug("Run finished")
 
-    def saveRaw(self, fname):
+    def saveRaw(self, fname=None):
         if fname is None:
             fname=self._id+"-"+datetime.now().isoformat()[0:16]+".raw"
         
