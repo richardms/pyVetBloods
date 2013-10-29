@@ -35,17 +35,16 @@ class SpotChem(BloodAnalyserBase):
         self._state = "WAIT_BLOCK_START"
         self._data = ''
         self._result = None
+        self._raw = None
 
     def run(self):
         self.debug("Running")
         while self._running:
-            rdata = self._ser.read(16)
+            rdata = self._read(16)
             
             if rdata == "":
                 continue
 
-            self.debug("Got '%s'", rdata)
-            
             self._data = self._data + rdata
             match = SpotChem._RE_BLOCK.search(self._data)
             
@@ -66,8 +65,25 @@ class SpotChem(BloodAnalyserBase):
             if send:
                 self._sendResult()
                 self._result = None
+        
+        if self._raw is not None:
+            self._raw.close()
+        
         self.debug("Run finished")
 
+    def saveRaw(self, fname):
+        if fname is None:
+            fname=self._id+"-"+datetime.now().isoformat()[0:16]+".raw"
+        
+        self._raw = open(fname, "wb")
+
+    def _read(self, rlen=16):
+        rdata = self._ser.read(rlen)
+        
+        if self._raw is not None:
+            self._raw.write(rdata)
+        
+        return rdata
     
     def _handleBlock(self, block, endchar):
         parts=[ s.strip() for s in block.split('\n')]

@@ -19,6 +19,10 @@ if __name__ == '__main__':
     spotchem1 = SpotChem("/dev/ttyUSB1", 9600)
     spotchem2 = SpotChem("/dev/ttyUSB2", 9600)
     
+    spotchem.saveRaw()
+    spotchem1.saveRaw()
+    spotchem2.saveRaw()
+    
     spotchem.start()
     spotchem1.start()
     spotchem2.start()
