@@ -14,7 +14,7 @@ class SpotChem(BloodAnalyserBase):
     '''
     classdocs
     '''
-    _RE_BLOCK    = re.compile('\002(.+)([\003\027])(.+)', re.DOTALL)
+    _RE_BLOCK    = re.compile('\002(.+)([\003\027])(.*)', re.DOTALL)
     _RE_DATETIME = re.compile('(\d{2})/(\d{2})/(\d{2}) +(\d{2}):(\d{2})')
     _RE_ID       = re.compile('ID# (\d+)')
     _RE_MULTI    = re.compile('MULTI:(.+)')
