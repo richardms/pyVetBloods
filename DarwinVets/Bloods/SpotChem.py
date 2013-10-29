@@ -25,7 +25,7 @@ class SpotChem(BloodAnalyserBase):
         '''
         Constructor
         '''
-        BloodAnalyserBase.__init__(self, "spotchem")
+        BloodAnalyserBase.__init__(self, "spotchem"+com_port[-1:])
         
         self._ser = serial.Serial(port=com_port, baudrate=baudrate, 
                                   bytesize=serial.SEVENBITS, parity=serial.PARITY_EVEN,
@@ -34,6 +34,7 @@ class SpotChem(BloodAnalyserBase):
         self._running = True
         self._state = "WAIT_BLOCK_START"
         self._data = ''
+        self._result = None
 
     def run(self):
         self.debug("Running")
