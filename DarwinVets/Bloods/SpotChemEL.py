@@ -32,12 +32,18 @@ class SpotChemEL(SpotChemBase):
         
         for i in range(3):
             result = block[pos:pos+21]
+            pos = pos + 21
+
+#             print "%d: %s"%(i, result)
             param =  result[0:5].strip()
             err   =  result[5:7].strip()
-            val   =  float(result[7:12].strip())
+            try:
+                val   =  float(result[7:12].strip())
+            except ValueError:
+                continue
+            
             temp  =  result[12]
             units =  result[14:20].strip()
-            pos = pos + 21
         
             self.info("     %s:%f %s"%(param, val, units))
             self._result.addParam(self._type, param, {
