@@ -4,9 +4,9 @@ Created on 25 Oct 2013
 @author: richardm
 '''
 
-from DarwinVets.Bloods.SpotChem import SpotChem
+from DarwinVets.Bloods.SpotChemEZ import SpotChemEZ
+from DarwinVets.Bloods.SpotChemEL import SpotChemEL
 from DarwinVets.Bloods.Mythic import Mythic
-import signal
 import sys
 import logging
 import time
@@ -15,9 +15,9 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
 
 #    mythic = Mythic("/dev/ttyUSB0", 9600)
-    spotchem = SpotChem("/dev/ttyUSB0", 9600)
-    spotchem1 = SpotChem("/dev/ttyUSB1", 9600)
-    spotchem2 = SpotChem("/dev/ttyUSB2", 9600)
+    spotchem = SpotChemEL("/dev/ttyUSB0")
+    spotchem1 = SpotChemEZ("/dev/ttyUSB1", 9600)
+    spotchem2 = SpotChemEL("/dev/ttyUSB2")
     
     spotchem.saveRaw()
     spotchem1.saveRaw()
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     
     try:
         while True:
-            raw_input("Press Ctrl-C to exit")
+            raw_input("Press Ctrl-C to exit\n")
     except:
         spotchem.exit()
         spotchem1.exit()
