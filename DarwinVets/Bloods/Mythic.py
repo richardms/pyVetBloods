@@ -55,7 +55,7 @@ class Mythic(BloodAnalyserBase):
 
     
     def _readline(self):
-        data = self._inbuf + self._ser.read(16)
+        data = self._inbuf + self._read(16)
         
         for i in range(len(data)):
             if data[i] == '\r':
