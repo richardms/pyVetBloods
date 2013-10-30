@@ -14,16 +14,15 @@ import time
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
 
-#    mythic = Mythic("/dev/ttyUSB0", 9600)
-    spotchem = SpotChemEL("/dev/ttyUSB0")
+    mythic = Mythic("/dev/ttyUSB0", 115200)
     spotchem1 = SpotChemEZ("/dev/ttyUSB1", 9600)
     spotchem2 = SpotChemEL("/dev/ttyUSB2")
     
-    spotchem.saveRaw()
+    mythic.saveRaw()
     spotchem1.saveRaw()
     spotchem2.saveRaw()
     
-    spotchem.start()
+    mythic.start()
     spotchem1.start()
     spotchem2.start()
 
@@ -38,11 +37,11 @@ if __name__ == '__main__':
         while True:
             raw_input("Press Ctrl-C to exit\n")
     except:
-        spotchem.exit()
+        mythic.exit()
         spotchem1.exit()
         spotchem2.exit()
 
-    spotchem.join()
+    mythic.join()
     spotchem1.join()
     spotchem2.join()
     
