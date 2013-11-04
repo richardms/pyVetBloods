@@ -13,11 +13,11 @@ def rhandler(res):
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
 
-    spotchem1 = SpotChemEL("TEST")
+    spotchemel = SpotChemEL("TEST")
     
-    spotchem1.registerResultHandler(rhandler)
+    spotchemel.registerResultHandler(rhandler)
     
-    spotchem1.start()
+    spotchemel.start()
     
     for dfname in datafiles:
         dfile = open(dfname, "rb")
@@ -26,12 +26,13 @@ if __name__ == '__main__':
             d=dfile.read(16)
             if len(d) == 0:
                 break
-            spotchem1.testWrite(d)
+            spotchemel.testWrite(d)
             
         dfile.close()
     
     time.sleep(2)
     
-    spotchem1.exit()
+    spotchemel.exit()
     
-    spotchem1.join()
+    spotchemel.join()
+    
