@@ -27,10 +27,12 @@ class Mythic(BloodAnalyserBase):
         '''
         BloodAnalyserBase.__init__(self, "mythic")
 
-        self._ser = serial.Serial(port=com_port, baudrate=baudrate, 
+        if com_port=="TEST":
+            self._ser = self._testmode()
+        else:
+            self._ser = serial.Serial(port=com_port, baudrate=baudrate, 
                                   bytesize=serial.EIGHTBITS, timeout=0.1)
         self._state = "WAIT_REQ"
-        self._handler = None
         
         self._inbuf = ""
         
@@ -51,16 +53,19 @@ class Mythic(BloodAnalyserBase):
             elif self._state == "RECV_RESULT":
                 self._handle_RECV_RESULT(line)
 
+        if self._raw is not None:
+            self._raw.close()
+        self._ser.close()
         self.debug("Run finished")
 
     
     def _readline(self):
-        data = self._inbuf + self._read(16)
-        
-        for i in range(len(data)):
-            if data[i] == '\r':
-                line=data[0:i].strip()
-                self._inbuf=data[i+1:]
+        self._inbuf = self._inbuf + self._read(16)
+
+        for i in range(len(self._inbuf)):
+            if self._inbuf[i] == '\r':
+                line=self._inbuf[0:i].strip()
+                self._inbuf=self._inbuf[i+1:]
                 return line
             
         return ""
@@ -68,7 +73,7 @@ class Mythic(BloodAnalyserBase):
     def _handle_WAIT_REQ(self, line):
         if Mythic._RE_REQ.match(line) is None:
             return
-        self._ser.write(Mythic._ACK_RES_READY)
+        self._write(Mythic._ACK_RES_READY)
         self._state = "WAIT_RESULT"
         
         return

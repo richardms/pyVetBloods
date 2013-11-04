@@ -11,7 +11,11 @@ class Result(object):
     '''
     classdocs
     '''
-
+    rtypes=['haem', 'electrolyte', 'biochem']
+    rtinfo={'haem': {'pretty': "Haemotology", 'abrv': 'H'},
+            'electrolyte': {'pretty': "Electrolyte", 'abrv': 'E'},
+            'biochem': {'pretty': "Biochemistry", 'abrv': 'C'}
+            }
 
     def __init__(self):
         '''
@@ -41,6 +45,38 @@ class Result(object):
             self._obj[part] = p
             
         p[key]=value
+        
+    def createCNs(self, refRanges=None):
+        cnlist = ["Internal Lab: %s"%(self.id, self.datetime.strftime("%H:%M %d/%m/%Y"))]
+        rlist = []
+        
+        for rt in Result.rtypes:
+            if rt not in self._obj:
+                continue
+            
+            curline = ""
+            
+            for r in self._obj[rt]:
+                res = self._obj[rt][r]
+                if refRanges is not None:
+                    mark = refRanges.getMark(self)
+                else:
+                    mark = "?"
+                    
+                rstr = "%s: %.2f %s, "%(r, res.val, mark)
+                
+                if len(curline) + len(rstr) > Result._maxCNlen:
+                    rlist.append(curline[:-2])
+                    curline = ""
+                    
+                curline = curline + rstr
+        rlist.append(curline[:-2])
+        
+        for rstr in rlist:
+            cnlist.append("%s %s"%(Result.rtinfo[rt].abrv, rstr))
+        
+        return cnlist
+
         
     def __str__(self):
         rstr = "RESULT@"+self._datetime.isoformat()+"\n"

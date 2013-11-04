@@ -28,7 +28,6 @@ class SpotChemBase(BloodAnalyserBase):
                                   bytesize=serial.SEVENBITS, parity=serial.PARITY_EVEN,
                                   stopbits=serial.STOPBITS_TWO,
                                   timeout=0.1)
-        self._running = True
         self._state = "WAIT_BLOCK_START"
         self._data = ''
         self._result = None

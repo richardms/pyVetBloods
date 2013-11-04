@@ -79,6 +79,12 @@ class BloodAnalyserBase(threading.Thread):
         
         return rdata
 
+    def _write(self, d):
+        if self._test:
+            print "Write: %s"%d
+        else:
+            self._ser.write(d)
+
     def _testmode(self):
         self._test = True
 #         self._test_fifoname = tempfile.mktemp(prefix=self._id+"-", suffix='.pipe')
@@ -88,12 +94,13 @@ class BloodAnalyserBase(threading.Thread):
 #         ser = open(self._test_fifoname, "rb", 0)
 #         self._test_wfile = open(self._test_fifoname, "wb", 0)
         p = os.pipe()
-        self._test_wfile = os.fdopen(p[1], "wb")
-        return os.fdopen(p[0], "rb")
+        self._test_wfile = os.fdopen(p[1], 'w')
+        return os.fdopen(p[0])
     
     def testWrite(self, d):
         if self._test:
             self._test_wfile.write(d)
+            self._test_wfile.flush()
             
     def testClose(self):
         if self._test:
