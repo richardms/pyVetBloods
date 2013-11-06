@@ -6,30 +6,38 @@ Created on 24 Oct 2013
 
 from datetime import datetime
 import json
+import dateutil.parser
 
 class Result(object):
     '''
     classdocs
     '''
     rtypes=['haem', 'electrolyte', 'biochem']
-    rtinfo={'haem': {'pretty': "Haemotology", 'abrv': 'H'},
-            'electrolyte': {'pretty': "Electrolyte", 'abrv': 'E'},
-            'biochem': {'pretty': "Biochemistry", 'abrv': 'C'}
+    rtinfo={
+            'haem':        {'pretty':  "Haemotology", 'abrv': 'H', 'headliners': ['HCT', 'PLT', 'WBC']},
+            'electrolyte': {'pretty':  "Electrolyte", 'abrv': 'E', 'headliners': ['BUN']},
+            'biochem':     {'pretty': "Biochemistry", 'abrv': 'C', 'headliners': []}
             }
+    _maxCNlen = 80
 
-    def __init__(self):
+    def __init__(self, srcobj=None):
         '''
         Constructor
         '''
-        self._datetime = datetime.now()
-        self._datetime_recv = datetime.now()
-        self._obj = {}
+        if srcobj is None:
+            self._obj = {}
+            self._datetime = datetime.now()
+            self._datetime_recv = datetime.now()
+        else:
+            self._obj = srcobj
+            self._datetime = dateutil.parser.parse(srcobj['datetime'])
+
         
     def setTime(self, time):
-        self._datetime = datetime(self._datetime.date(), time)
+        self._datetime = datetime.combine(self._datetime.date(), time)
         
     def setDate(self, date):
-        self._datetime = datetime(date, self._datetime.time())
+        self._datetime = datetime.combine(date, self._datetime.time())
         
     def setDateTime(self, dt):
         self._datetime = dt
@@ -47,7 +55,7 @@ class Result(object):
         p[key]=value
         
     def createCNs(self, refRanges=None):
-        cnlist = ["Internal Lab: %s"%(self.id, self.datetime.strftime("%H:%M %d/%m/%Y"))]
+        cnlist = ["Internal Lab: %s"%(self._datetime.strftime("%H:%M %d/%m/%Y"))]
         rlist = []
         
         for rt in Result.rtypes:
@@ -56,28 +64,50 @@ class Result(object):
             
             curline = ""
             
-            for r in self._obj[rt]:
-                res = self._obj[rt][r]
+            resobj = dict(self._obj[rt])
+            
+            for r in Result.rtinfo[rt]['headliners']:
+                res = resobj[r]
                 if refRanges is not None:
                     mark = refRanges.getMark(self)
                 else:
                     mark = "?"
                     
-                rstr = "%s: %.2f %s, "%(r, res.val, mark)
+                rstr = "%s: %.2f %s, "%(r, res['val'], mark)
                 
-                if len(curline) + len(rstr) > Result._maxCNlen:
+                curline = curline + rstr
+                del resobj[r]
+            
+            if curline != "":
+                rlist.append(curline[:-2])
+                curline = ""
+            
+            for r in resobj:
+                res = resobj[r]
+                if refRanges is not None:
+                    mark = refRanges.getMark(self)
+                else:
+                    mark = "?"
+                    
+                rstr = "%s: %.2f %s, "%(r, res['val'], mark)
+                
+                if len(curline) + len(rstr) > Result._maxCNlen-2:
                     rlist.append(curline[:-2])
                     curline = ""
                     
                 curline = curline + rstr
-        rlist.append(curline[:-2])
+                
+            rlist.append(curline[:-2])
         
-        for rstr in rlist:
-            cnlist.append("%s %s"%(Result.rtinfo[rt].abrv, rstr))
+            for rstr in rlist:
+                cnlist.append("%s %s"%(Result.rtinfo[rt]['abrv'], rstr))
         
         return cnlist
 
+    def objectify(self):
+        self._obj['datetime'] = self._datetime.isoformat()
         
+       
     def __str__(self):
         rstr = "RESULT@"+self._datetime.isoformat()+"\n"
         rstr = rstr + json.dumps(self._obj)
