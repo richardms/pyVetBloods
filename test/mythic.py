@@ -4,10 +4,13 @@ import logging
 from DarwinVets.Bloods.Mythic import Mythic
 
 
-datafiles = [ "data/mythic-2013-11-02T18:01.raw" ]
+datafiles = [ "data/mythic-2013-11-04T15:27.raw" ] #, "data/mythic-2013-11-02T18:01.raw" ]
 
 def rhandler(res):
     print res
+    cnlist = res.createCNs()
+    for cn in cnlist:
+        print "->%s<-"%cn
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
