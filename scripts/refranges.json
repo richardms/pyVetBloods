@@ -1,0 +1,1876 @@
+{
+  "HORSE": {
+    "H": {
+      "PLT": {
+        "high": 800.0, 
+        "units": "10 9/l", 
+        "low": 200.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.53000000000000003, 
+        "units": "l/l", 
+        "low": 0.32000000000000001, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.23, 
+        "units": "fmol", 
+        "low": 0.73999999999999999, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 12.9, 
+        "units": "10 12/l", 
+        "low": 6.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 22.800000000000001, 
+        "units": "mmol/l", 
+        "low": 19.100000000000001, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 8.5, 
+        "units": "10 9/l", 
+        "low": 1.3999999999999999, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 1.3, 
+        "units": "10 9/l", 
+        "low": 0.10000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 13.0, 
+        "units": "fl", 
+        "low": 8.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 14.0, 
+        "units": "10 9/l", 
+        "low": 5.0, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 8.0, 
+        "units": "10 9/l", 
+        "low": 1.6000000000000001, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 59.0, 
+        "units": "fl", 
+        "low": 37.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 11.699999999999999, 
+        "units": "mmol/l", 
+        "low": 6.7999999999999998, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "GGT": {
+        "high": 56.0, 
+        "units": "u/l", 
+        "low": 16.0, 
+        "desc": "GGT"
+      }, 
+      "T-CHO": {
+        "high": 3.8900000000000001, 
+        "units": "mmol/l", 
+        "low": 1.9399999999999999, 
+        "desc": "Total Cholesterol"
+      }, 
+      "CPK": {
+        "high": 269.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "AST": {
+        "high": 488.0, 
+        "units": "u/l", 
+        "low": 22.0, 
+        "desc": "AST"
+      }, 
+      "CA": {
+        "high": 3.3999999999999999, 
+        "units": "mmol/l", 
+        "low": 2.7999999999999998, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 412.0, 
+        "units": "u/l", 
+        "low": 162.0, 
+        "desc": "LDH"
+      }, 
+      "BUN": {
+        "high": 9.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "T-BIL": {
+        "high": 34.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "HB": {
+        "high": 7.7000000000000002, 
+        "units": "mmol/l", 
+        "low": 6.5, 
+        "desc": "Haemoglobin"
+      }, 
+      "CREA": {
+        "high": 180.0, 
+        "units": "umol/l", 
+        "low": 116.0, 
+        "desc": "Creatinine"
+      }, 
+      "T-PRO": {
+        "high": 94.0, 
+        "units": "g/l", 
+        "low": 62.0, 
+        "desc": "Total Protein"
+      }, 
+      "GLU": {
+        "high": 6.2999999999999998, 
+        "units": "mmol/l", 
+        "low": 3.8999999999999999, 
+        "desc": "Glucose"
+      }, 
+      "ALP": {
+        "high": 269.0, 
+        "units": "u/l", 
+        "low": 97.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "Feline": {
+    "E": {
+      "NA": {
+        "high": 156.0, 
+        "units": "mmol/L", 
+        "low": 143.0, 
+        "desc": "Sodium"
+      }, 
+      "K": {
+        "high": 5.2000000000000002, 
+        "units": "mmol/L", 
+        "low": 3.5, 
+        "desc": "Pottassium"
+      }, 
+      "CL": {
+        "high": 128.0, 
+        "units": "mmol/L", 
+        "low": 108.0, 
+        "desc": "Chloride"
+      }
+    }
+  }, 
+  "EQUINE": {
+    "H": {
+      "PLT": {
+        "high": 800.0, 
+        "units": "10 9/l", 
+        "low": 200.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.53000000000000003, 
+        "units": "l/l", 
+        "low": 0.32000000000000001, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.23, 
+        "units": "fmol", 
+        "low": 0.73999999999999999, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 12.9, 
+        "units": "10 12/l", 
+        "low": 6.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 22.800000000000001, 
+        "units": "mmol/l", 
+        "low": 19.100000000000001, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 8.5, 
+        "units": "10 9/l", 
+        "low": 1.3999999999999999, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 1.3, 
+        "units": "10 9/l", 
+        "low": 0.10000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 13.0, 
+        "units": "fl", 
+        "low": 8.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 14.0, 
+        "units": "10 9/l", 
+        "low": 5.0, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 8.0, 
+        "units": "10 9/l", 
+        "low": 1.6000000000000001, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 59.0, 
+        "units": "fl", 
+        "low": 37.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 11.699999999999999, 
+        "units": "mmol/l", 
+        "low": 6.7999999999999998, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "GGT": {
+        "high": 56.0, 
+        "units": "u/l", 
+        "low": 16.0, 
+        "desc": "GGT"
+      }, 
+      "T-CHO": {
+        "high": 3.8900000000000001, 
+        "units": "mmol/l", 
+        "low": 1.9399999999999999, 
+        "desc": "Total Cholesterol"
+      }, 
+      "CPK": {
+        "high": 269.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "AST": {
+        "high": 488.0, 
+        "units": "u/l", 
+        "low": 22.0, 
+        "desc": "AST"
+      }, 
+      "CA": {
+        "high": 3.3999999999999999, 
+        "units": "mmol/l", 
+        "low": 2.7999999999999998, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 412.0, 
+        "units": "u/l", 
+        "low": 162.0, 
+        "desc": "LDH"
+      }, 
+      "BUN": {
+        "high": 9.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "T-BIL": {
+        "high": 34.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "HB": {
+        "high": 7.7000000000000002, 
+        "units": "mmol/l", 
+        "low": 6.5, 
+        "desc": "Haemoglobin"
+      }, 
+      "CREA": {
+        "high": 180.0, 
+        "units": "umol/l", 
+        "low": 116.0, 
+        "desc": "Creatinine"
+      }, 
+      "T-PRO": {
+        "high": 94.0, 
+        "units": "g/l", 
+        "low": 62.0, 
+        "desc": "Total Protein"
+      }, 
+      "GLU": {
+        "high": 6.2999999999999998, 
+        "units": "mmol/l", 
+        "low": 3.8999999999999999, 
+        "desc": "Glucose"
+      }, 
+      "ALP": {
+        "high": 269.0, 
+        "units": "u/l", 
+        "low": 97.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "COW": {
+    "H": {
+      "PLT": {
+        "high": 800.0, 
+        "units": "10 9/l", 
+        "low": 100.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.46000000000000002, 
+        "units": "l/l", 
+        "low": 0.23999999999999999, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.05, 
+        "units": "fmol", 
+        "low": 0.68000000000000005, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 10.0, 
+        "units": "10 12/l", 
+        "low": 5.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 22.199999999999999, 
+        "units": "mmol/l", 
+        "low": 18.5, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 9.0, 
+        "units": "10 9/l", 
+        "low": 1.8, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 1.2, 
+        "units": "10 9/l", 
+        "low": 0.10000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 30.0, 
+        "units": "fl", 
+        "low": 3.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 12.0, 
+        "units": "10 9/l", 
+        "low": 4.0, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 5.5, 
+        "units": "10 9/l", 
+        "low": 0.59999999999999998, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 60.0, 
+        "units": "fl", 
+        "low": 40.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 9.3000000000000007, 
+        "units": "mmol/l", 
+        "low": 4.9000000000000004, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "GGT": {
+        "high": 65.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "GGT"
+      }, 
+      "MG": {
+        "high": 1.0700000000000001, 
+        "units": "mmol/l", 
+        "low": 0.66000000000000003, 
+        "desc": "Mg"
+      }, 
+      "CPK": {
+        "high": 170.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "AST": {
+        "high": 112.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "IP": {
+        "high": 2.7400000000000002, 
+        "units": "mmol/l", 
+        "low": 1.3600000000000001, 
+        "desc": "Phosphate"
+      }, 
+      "CA": {
+        "high": 3.1000000000000001, 
+        "units": "mmol/l", 
+        "low": 2.4300000000000002, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 1445.0, 
+        "units": "u/l", 
+        "low": 692.0, 
+        "desc": "LDH"
+      }, 
+      "T-CHO": {
+        "high": 3.1099999999999999, 
+        "units": "mmol/l", 
+        "low": 2.0699999999999998, 
+        "desc": "Total Cholesterol"
+      }, 
+      "BUN": {
+        "high": 9.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "T-BIL": {
+        "high": 8.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "HB": {
+        "high": 6.9000000000000004, 
+        "units": "mmol/l", 
+        "low": 4.2999999999999998, 
+        "desc": "Haemoglobin"
+      }, 
+      "T-PRO": {
+        "high": 101.0, 
+        "units": "g/l", 
+        "low": 73.0, 
+        "desc": "Total Protein"
+      }, 
+      "GLU": {
+        "high": 4.0999999999999996, 
+        "units": "mmol/l", 
+        "low": 2.5, 
+        "desc": "Glucose"
+      }, 
+      "ALP": {
+        "high": 332.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "FELINE": {
+    "H": {
+      "PLT": {
+        "high": 800.0, 
+        "units": "10 9/l", 
+        "low": 200.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.47999999999999998, 
+        "units": "l/l", 
+        "low": 0.26000000000000001, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.1699999999999999, 
+        "units": "fmol", 
+        "low": 0.85999999999999999, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 9.9000000000000004, 
+        "units": "10 12/l", 
+        "low": 5.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 22.199999999999999, 
+        "units": "mmol/l", 
+        "low": 18.5, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 10.5, 
+        "units": "10 9/l", 
+        "low": 1.0, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 2.2000000000000002, 
+        "units": "10 9/l", 
+        "low": 0.20000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 13.0, 
+        "units": "fl", 
+        "low": 8.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 18.0, 
+        "units": "10 9/l", 
+        "low": 6.5999999999999996, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 14.0, 
+        "units": "10 9/l", 
+        "low": 1.7, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 55.0, 
+        "units": "fl", 
+        "low": 43.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 9.5999999999999996, 
+        "units": "mmol/l", 
+        "low": 5.5999999999999996, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "BUN": {
+        "high": 14.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "GGT": {
+        "high": 9.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "GGT"
+      }, 
+      "FRA": {
+        "high": 341.0, 
+        "units": "umol/l", 
+        "low": 221.0, 
+        "desc": "Fructosamine"
+      }, 
+      "CPK": {
+        "high": 235.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "AST": {
+        "high": 53.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "IP": {
+        "high": 2.71, 
+        "units": "mmol/l", 
+        "low": 0.55000000000000004, 
+        "desc": "Phosphate"
+      }, 
+      "CA": {
+        "high": 3.0, 
+        "units": "mmol/l", 
+        "low": 2.0, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 500.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "LDH"
+      }, 
+      "ALB": {
+        "high": 30.0, 
+        "units": "g/l", 
+        "low": 20.0, 
+        "desc": "Albumin"
+      }, 
+      "MG": {
+        "high": 1.1499999999999999, 
+        "units": "mmol/l", 
+        "low": 0.78000000000000003, 
+        "desc": "Mg"
+      }, 
+      "AMY": {
+        "high": 2520.0, 
+        "units": "u/l", 
+        "low": 666.0, 
+        "desc": "Amylase"
+      }, 
+      "T-CHO": {
+        "high": 6.4800000000000004, 
+        "units": "mmol/l", 
+        "low": 1.55, 
+        "desc": "Total Cholesterol"
+      }, 
+      "T-BIL": {
+        "high": 5.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "TG": {
+        "high": 0.90000000000000002, 
+        "units": "mmol/l", 
+        "low": 0.17000000000000001, 
+        "desc": "Troglycerides"
+      }, 
+      "HB": {
+        "high": 8.0, 
+        "units": "mmol/l", 
+        "low": 5.7000000000000002, 
+        "desc": "Haemoglobin"
+      }, 
+      "CREA": {
+        "high": 124.0, 
+        "units": "umol/l", 
+        "low": 87.0, 
+        "desc": "Creatinine"
+      }, 
+      "ALT": {
+        "high": 80.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "ALT"
+      }, 
+      "T-PRO": {
+        "high": 80.0, 
+        "units": "g/l", 
+        "low": 60.0, 
+        "desc": "Total Protein"
+      }, 
+      "UA": {
+        "high": 60.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Uric acid"
+      }, 
+      "GLU": {
+        "high": 7.2000000000000002, 
+        "units": "mmol/l", 
+        "low": 2.7999999999999998, 
+        "desc": "Glucose"
+      }, 
+      "ALP": {
+        "high": 82.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "BOVINE": {
+    "H": {
+      "PLT": {
+        "high": 800.0, 
+        "units": "10 9/l", 
+        "low": 100.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.46000000000000002, 
+        "units": "l/l", 
+        "low": 0.23999999999999999, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.05, 
+        "units": "fmol", 
+        "low": 0.68000000000000005, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 10.0, 
+        "units": "10 12/l", 
+        "low": 5.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 22.199999999999999, 
+        "units": "mmol/l", 
+        "low": 18.5, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 9.0, 
+        "units": "10 9/l", 
+        "low": 1.8, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 1.2, 
+        "units": "10 9/l", 
+        "low": 0.10000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 30.0, 
+        "units": "fl", 
+        "low": 3.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 12.0, 
+        "units": "10 9/l", 
+        "low": 4.0, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 5.5, 
+        "units": "10 9/l", 
+        "low": 0.59999999999999998, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 60.0, 
+        "units": "fl", 
+        "low": 40.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 9.3000000000000007, 
+        "units": "mmol/l", 
+        "low": 4.9000000000000004, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "GGT": {
+        "high": 65.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "GGT"
+      }, 
+      "MG": {
+        "high": 1.0700000000000001, 
+        "units": "mmol/l", 
+        "low": 0.66000000000000003, 
+        "desc": "Mg"
+      }, 
+      "CPK": {
+        "high": 170.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "AST": {
+        "high": 112.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "IP": {
+        "high": 2.7400000000000002, 
+        "units": "mmol/l", 
+        "low": 1.3600000000000001, 
+        "desc": "Phosphate"
+      }, 
+      "CA": {
+        "high": 3.1000000000000001, 
+        "units": "mmol/l", 
+        "low": 2.4300000000000002, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 1445.0, 
+        "units": "u/l", 
+        "low": 692.0, 
+        "desc": "LDH"
+      }, 
+      "T-CHO": {
+        "high": 3.1099999999999999, 
+        "units": "mmol/l", 
+        "low": 2.0699999999999998, 
+        "desc": "Total Cholesterol"
+      }, 
+      "BUN": {
+        "high": 9.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "T-BIL": {
+        "high": 8.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "HB": {
+        "high": 6.9000000000000004, 
+        "units": "mmol/l", 
+        "low": 4.2999999999999998, 
+        "desc": "Haemoglobin"
+      }, 
+      "T-PRO": {
+        "high": 101.0, 
+        "units": "g/l", 
+        "low": 73.0, 
+        "desc": "Total Protein"
+      }, 
+      "GLU": {
+        "high": 4.0999999999999996, 
+        "units": "mmol/l", 
+        "low": 2.5, 
+        "desc": "Glucose"
+      }, 
+      "ALP": {
+        "high": 332.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "DOG": {
+    "H": {
+      "PLT": {
+        "high": 550.0, 
+        "units": "10 9/l", 
+        "low": 180.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.54000000000000004, 
+        "units": "l/l", 
+        "low": 0.37, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.6699999999999999, 
+        "units": "fmol", 
+        "low": 1.3, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 8.0, 
+        "units": "10 12/l", 
+        "low": 5.5, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 23.399999999999999, 
+        "units": "mmol/l", 
+        "low": 20.399999999999999, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 5.0, 
+        "units": "10 9/l", 
+        "low": 0.69999999999999996, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 1.7, 
+        "units": "10 9/l", 
+        "low": 0.10000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 10.0, 
+        "units": "fl", 
+        "low": 6.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 16.0, 
+        "units": "10 9/l", 
+        "low": 6.4000000000000004, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 13.0, 
+        "units": "10 9/l", 
+        "low": 3.6000000000000001, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 75.0, 
+        "units": "fl", 
+        "low": 56.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 11.699999999999999, 
+        "units": "mmol/l", 
+        "low": 8.1999999999999993, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "T-CHO": {
+        "high": 9.8399999999999999, 
+        "units": "mmol/l", 
+        "low": 2.5899999999999999, 
+        "desc": "Total Cholesterol"
+      }, 
+      "CPK": {
+        "high": 282.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "HB": {
+        "high": 9.6999999999999993, 
+        "units": "mmol/l", 
+        "low": 7.5, 
+        "desc": "Haemoglobin"
+      }, 
+      "GLU": {
+        "high": 8.1999999999999993, 
+        "units": "mmol/l", 
+        "low": 2.2000000000000002, 
+        "desc": "Glucose"
+      }, 
+      "GGT": {
+        "high": 9.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "GGT"
+      }, 
+      "AST": {
+        "high": 36.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "LDH": {
+        "high": 625.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "LDH"
+      }, 
+      "AMY": {
+        "high": 1440.0, 
+        "units": "u/l", 
+        "low": 648.0, 
+        "desc": "Amylase"
+      }, 
+      "BUN": {
+        "high": 12.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "TG": {
+        "high": 1.47, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "Troglycerides"
+      }, 
+      "T-PRO": {
+        "high": 80.0, 
+        "units": "g/l", 
+        "low": 60.0, 
+        "desc": "Total Protein"
+      }, 
+      "CA": {
+        "high": 3.0, 
+        "units": "mmol/l", 
+        "low": 2.0, 
+        "desc": "Calcium"
+      }, 
+      "FRA": {
+        "high": 344.0, 
+        "units": "umol/l", 
+        "low": 258.0, 
+        "desc": "Fructosamine"
+      }, 
+      "T-BIL": {
+        "high": 5.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "IP": {
+        "high": 1.6799999999999999, 
+        "units": "mmol/l", 
+        "low": 0.57999999999999996, 
+        "desc": "Phosphate"
+      }, 
+      "GLOB": {
+        "high": 45.0, 
+        "units": "g/l", 
+        "low": 25.0, 
+        "desc": "Globulin"
+      }, 
+      "MG": {
+        "high": 1.03, 
+        "units": "mmol/l", 
+        "low": 0.67000000000000004, 
+        "desc": "Mg"
+      }, 
+      "ALB": {
+        "high": 30.0, 
+        "units": "g/l", 
+        "low": 20.0, 
+        "desc": "Albumin"
+      }, 
+      "CREA": {
+        "high": 159.0, 
+        "units": "umol/l", 
+        "low": 44.0, 
+        "desc": "Creatinine"
+      }, 
+      "ALT": {
+        "high": 120.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "ALT"
+      }, 
+      "UA": {
+        "high": 60.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Uric acid"
+      }, 
+      "ALP": {
+        "high": 147.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }, 
+    "E": {
+      "CL": {
+        "high": 122.0, 
+        "units": "mmol/L", 
+        "low": 96.0, 
+        "desc": "Chloride"
+      }
+    }
+  }, 
+  "CANINE": {
+    "H": {
+      "PLT": {
+        "high": 550.0, 
+        "units": "10 9/l", 
+        "low": 180.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.54000000000000004, 
+        "units": "l/l", 
+        "low": 0.37, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.6699999999999999, 
+        "units": "fmol", 
+        "low": 1.3, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 8.0, 
+        "units": "10 12/l", 
+        "low": 5.5, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 23.399999999999999, 
+        "units": "mmol/l", 
+        "low": 20.399999999999999, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 5.0, 
+        "units": "10 9/l", 
+        "low": 0.69999999999999996, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 1.7, 
+        "units": "10 9/l", 
+        "low": 0.10000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 10.0, 
+        "units": "fl", 
+        "low": 6.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 16.0, 
+        "units": "10 9/l", 
+        "low": 6.4000000000000004, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 13.0, 
+        "units": "10 9/l", 
+        "low": 3.6000000000000001, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 75.0, 
+        "units": "fl", 
+        "low": 56.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 11.699999999999999, 
+        "units": "mmol/l", 
+        "low": 8.1999999999999993, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "BUN": {
+        "high": 12.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "GGT": {
+        "high": 9.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "GGT"
+      }, 
+      "FRA": {
+        "high": 344.0, 
+        "units": "umol/l", 
+        "low": 258.0, 
+        "desc": "Fructosamine"
+      }, 
+      "CPK": {
+        "high": 282.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "AST": {
+        "high": 36.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "IP": {
+        "high": 1.6799999999999999, 
+        "units": "mmol/l", 
+        "low": 0.57999999999999996, 
+        "desc": "Phosphate"
+      }, 
+      "CA": {
+        "high": 3.0, 
+        "units": "mmol/l", 
+        "low": 2.0, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 625.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "LDH"
+      }, 
+      "ALB": {
+        "high": 30.0, 
+        "units": "g/l", 
+        "low": 20.0, 
+        "desc": "Albumin"
+      }, 
+      "MG": {
+        "high": 1.03, 
+        "units": "mmol/l", 
+        "low": 0.67000000000000004, 
+        "desc": "Mg"
+      }, 
+      "AMY": {
+        "high": 1440.0, 
+        "units": "u/l", 
+        "low": 648.0, 
+        "desc": "Amylase"
+      }, 
+      "T-CHO": {
+        "high": 9.8399999999999999, 
+        "units": "mmol/l", 
+        "low": 2.5899999999999999, 
+        "desc": "Total Cholesterol"
+      }, 
+      "T-BIL": {
+        "high": 5.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "TG": {
+        "high": 1.47, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "Troglycerides"
+      }, 
+      "HB": {
+        "high": 9.6999999999999993, 
+        "units": "mmol/l", 
+        "low": 7.5, 
+        "desc": "Haemoglobin"
+      }, 
+      "CREA": {
+        "high": 159.0, 
+        "units": "umol/l", 
+        "low": 44.0, 
+        "desc": "Creatinine"
+      }, 
+      "ALT": {
+        "high": 120.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "ALT"
+      }, 
+      "T-PRO": {
+        "high": 80.0, 
+        "units": "g/l", 
+        "low": 60.0, 
+        "desc": "Total Protein"
+      }, 
+      "UA": {
+        "high": 60.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Uric acid"
+      }, 
+      "GLU": {
+        "high": 8.1999999999999993, 
+        "units": "mmol/l", 
+        "low": 2.2000000000000002, 
+        "desc": "Glucose"
+      }, 
+      "ALP": {
+        "high": 147.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "PIG": {
+    "H": {
+      "PLT": {
+        "high": 720.0, 
+        "units": "10 9/l", 
+        "low": 320.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.5, 
+        "units": "l/l", 
+        "low": 0.32000000000000001, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.4199999999999999, 
+        "units": "fmol", 
+        "low": 1.05, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 8.0, 
+        "units": "10 12/l", 
+        "low": 5.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 21.0, 
+        "units": "mmol/l", 
+        "low": 18.5, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 13.5, 
+        "units": "10 9/l", 
+        "low": 4.2999999999999998, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MPV": {
+        "high": 30.0, 
+        "units": "fl", 
+        "low": 3.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 22.0, 
+        "units": "10 9/l", 
+        "low": 11.0, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 10.5, 
+        "units": "10 9/l", 
+        "low": 2.6000000000000001, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 68.0, 
+        "units": "fl", 
+        "low": 50.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 9.9000000000000004, 
+        "units": "mmol/l", 
+        "low": 6.2000000000000002, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "GGT": {
+        "high": 97.0, 
+        "units": "u/l", 
+        "low": 13.0, 
+        "desc": "GGT"
+      }, 
+      "AST": {
+        "high": 57.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "IP": {
+        "high": 4.1399999999999997, 
+        "units": "mmol/l", 
+        "low": 2.2599999999999998, 
+        "desc": "Phosphate"
+      }, 
+      "CA": {
+        "high": 3.3799999999999999, 
+        "units": "mmol/l", 
+        "low": 2.6200000000000001, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 2652.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "LDH"
+      }, 
+      "ALB": {
+        "high": 52.0, 
+        "units": "g/l", 
+        "low": 28.0, 
+        "desc": "Albumin"
+      }, 
+      "BUN": {
+        "high": 6.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "T-BIL": {
+        "high": 11.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "CREA": {
+        "high": 217.0, 
+        "units": "umol/l", 
+        "low": 118.0, 
+        "desc": "Creatinine"
+      }, 
+      "ALT": {
+        "high": 37.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "ALT"
+      }, 
+      "T-PRO": {
+        "high": 87.0, 
+        "units": "g/l", 
+        "low": 59.0, 
+        "desc": "Total Protein"
+      }
+    }
+  }, 
+  "Dog": {
+    "E": {
+      "NA": {
+        "high": 155.0, 
+        "units": "mmol/L", 
+        "low": 145.0, 
+        "desc": "Sodium"
+      }, 
+      "K": {
+        "high": 5.0, 
+        "units": "mmol/L", 
+        "low": 2.7000000000000002, 
+        "desc": "Pottassium"
+      }
+    }
+  }, 
+  "Horse": {
+    "E": {
+      "NA": {
+        "high": 148.0, 
+        "units": "mmol/L", 
+        "low": 137.0, 
+        "desc": "Sodium"
+      }, 
+      "K": {
+        "high": 5.0999999999999996, 
+        "units": "mmol/L", 
+        "low": 2.7999999999999998, 
+        "desc": "Pottassium"
+      }, 
+      "CL": {
+        "high": 109.0, 
+        "units": "mmol/L", 
+        "low": 99.0, 
+        "desc": "Chloride"
+      }
+    }
+  }, 
+  "Canine": {
+    "E": {
+      "NA": {
+        "high": 155.0, 
+        "units": "mmol/L", 
+        "low": 145.0, 
+        "desc": "Sodium"
+      }, 
+      "K": {
+        "high": 5.0, 
+        "units": "mmol/L", 
+        "low": 2.7000000000000002, 
+        "desc": "Pottassium"
+      }, 
+      "CL": {
+        "high": 122.0, 
+        "units": "mmol/L", 
+        "low": 96.0, 
+        "desc": "Chloride"
+      }
+    }
+  }, 
+  "PORCINE": {
+    "H": {
+      "PLT": {
+        "high": 720.0, 
+        "units": "10 9/l", 
+        "low": 320.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.5, 
+        "units": "l/l", 
+        "low": 0.32000000000000001, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.4199999999999999, 
+        "units": "fmol", 
+        "low": 1.05, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 8.0, 
+        "units": "10 12/l", 
+        "low": 5.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 21.0, 
+        "units": "mmol/l", 
+        "low": 18.5, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 13.5, 
+        "units": "10 9/l", 
+        "low": 4.2999999999999998, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MPV": {
+        "high": 30.0, 
+        "units": "fl", 
+        "low": 3.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 22.0, 
+        "units": "10 9/l", 
+        "low": 11.0, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 10.5, 
+        "units": "10 9/l", 
+        "low": 2.6000000000000001, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 68.0, 
+        "units": "fl", 
+        "low": 50.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 9.9000000000000004, 
+        "units": "mmol/l", 
+        "low": 6.2000000000000002, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "GGT": {
+        "high": 97.0, 
+        "units": "u/l", 
+        "low": 13.0, 
+        "desc": "GGT"
+      }, 
+      "AST": {
+        "high": 57.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "IP": {
+        "high": 4.1399999999999997, 
+        "units": "mmol/l", 
+        "low": 2.2599999999999998, 
+        "desc": "Phosphate"
+      }, 
+      "CA": {
+        "high": 3.3799999999999999, 
+        "units": "mmol/l", 
+        "low": 2.6200000000000001, 
+        "desc": "Calcium"
+      }, 
+      "LDH": {
+        "high": 2652.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "LDH"
+      }, 
+      "ALB": {
+        "high": 52.0, 
+        "units": "g/l", 
+        "low": 28.0, 
+        "desc": "Albumin"
+      }, 
+      "BUN": {
+        "high": 6.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "T-BIL": {
+        "high": 11.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Total Bilirubin"
+      }, 
+      "CREA": {
+        "high": 217.0, 
+        "units": "umol/l", 
+        "low": 118.0, 
+        "desc": "Creatinine"
+      }, 
+      "ALT": {
+        "high": 37.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "ALT"
+      }, 
+      "T-PRO": {
+        "high": 87.0, 
+        "units": "g/l", 
+        "low": 59.0, 
+        "desc": "Total Protein"
+      }
+    }
+  }, 
+  "Cat": {
+    "E": {
+      "NA": {
+        "high": 156.0, 
+        "units": "mmol/L", 
+        "low": 143.0, 
+        "desc": "Sodium"
+      }, 
+      "K": {
+        "high": 5.2000000000000002, 
+        "units": "mmol/L", 
+        "low": 3.5, 
+        "desc": "Pottassium"
+      }, 
+      "CL": {
+        "high": 128.0, 
+        "units": "mmol/L", 
+        "low": 108.0, 
+        "desc": "Chloride"
+      }
+    }
+  }, 
+  "CAT": {
+    "H": {
+      "PLT": {
+        "high": 800.0, 
+        "units": "10 9/l", 
+        "low": 200.0, 
+        "desc": "Platelet Count"
+      }, 
+      "HCT": {
+        "high": 0.47999999999999998, 
+        "units": "l/l", 
+        "low": 0.26000000000000001, 
+        "desc": "Haematocrit"
+      }, 
+      "MCH": {
+        "high": 1.1699999999999999, 
+        "units": "fmol", 
+        "low": 0.85999999999999999, 
+        "desc": "Mean Cell Haemoglobin"
+      }, 
+      "RBC": {
+        "high": 9.9000000000000004, 
+        "units": "10 12/l", 
+        "low": 5.0, 
+        "desc": "Red Blood Cell Count"
+      }, 
+      "MCHC": {
+        "high": 22.199999999999999, 
+        "units": "mmol/l", 
+        "low": 18.5, 
+        "desc": "Mean Cell Hgb Concentration"
+      }, 
+      "LYMF": {
+        "high": 10.5, 
+        "units": "10 9/l", 
+        "low": 1.0, 
+        "desc": "Lymphocyte Count"
+      }, 
+      "MID": {
+        "high": 2.2000000000000002, 
+        "units": "10 9/l", 
+        "low": 0.20000000000000001, 
+        "desc": "Monocyte Count"
+      }, 
+      "MPV": {
+        "high": 13.0, 
+        "units": "fl", 
+        "low": 8.0, 
+        "desc": "Mean Platelet Volume"
+      }, 
+      "WBC": {
+        "high": 18.0, 
+        "units": "10 9/l", 
+        "low": 6.5999999999999996, 
+        "desc": "White Blood Cell Count"
+      }, 
+      "GRAN": {
+        "high": 14.0, 
+        "units": "10 9/l", 
+        "low": 1.7, 
+        "desc": "Granulocyte Count"
+      }, 
+      "MCV": {
+        "high": 55.0, 
+        "units": "fl", 
+        "low": 43.0, 
+        "desc": "Mean Cell Volume"
+      }, 
+      "HGB": {
+        "high": 9.5999999999999996, 
+        "units": "mmol/l", 
+        "low": 5.5999999999999996, 
+        "desc": "Haemoglobin"
+      }
+    }, 
+    "C": {
+      "T-CHO": {
+        "high": 6.4800000000000004, 
+        "units": "mmol/l", 
+        "low": 1.55, 
+        "desc": "Total Cholesterol"
+      }, 
+      "CPK": {
+        "high": 235.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "CPK"
+      }, 
+      "HB": {
+        "high": 8.0, 
+        "units": "mmol/l", 
+        "low": 5.7000000000000002, 
+        "desc": "Haemoglobin"
+      }, 
+      "GLU": {
+        "high": 7.2000000000000002, 
+        "units": "mmol/l", 
+        "low": 2.7999999999999998, 
+        "desc": "Glucose"
+      }, 
+      "GGT": {
+        "high": 9.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "GGT"
+      }, 
+      "AST": {
+        "high": 53.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "AST"
+      }, 
+      "LDH": {
+        "high": 500.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "LDH"
+      }, 
+      "AMY": {
+        "high": 2520.0, 
+        "units": "u/l", 
+        "low": 666.0, 
+        "desc": "Amylase"
+      }, 
+      "BUN": {
+        "high": 14.0, 
+        "units": "mmol/l", 
+        "low": 0.0, 
+        "desc": "BUN"
+      }, 
+      "TG": {
+        "high": 0.90000000000000002, 
+        "units": "mmol/l", 
+        "low": 0.17000000000000001, 
+        "desc": "Troglycerides"
+      }, 
+      "T-PRO": {
+        "high": 80.0, 
+        "units": "g/l", 
+        "low": 60.0, 
+        "desc": "Total Protein"
+      }, 
+      "CA": {
+        "high": 3.0, 
+        "units": "mmol/l", 
+        "low": 2.0, 
+        "desc": "Calcium"
+      }, 
+      "FRA": {
+        "high": 341.0, 
+        "units": "umol/l", 
+        "low": 221.0, 
+        "desc": "Fructosamine"
+      }, 
+      "T-BIL": {
+        "high": 5.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": " Total Bilirubin"
+      }, 
+      "IP": {
+        "high": 2.71, 
+        "units": "mmol/l", 
+        "low": 0.55000000000000004, 
+        "desc": "Phosphate"
+      }, 
+      "GLOB": {
+        "high": 55.0, 
+        "units": "g/l", 
+        "low": 28.0, 
+        "desc": "Globulin"
+      }, 
+      "MG": {
+        "high": 1.1499999999999999, 
+        "units": "mmol/l", 
+        "low": 0.78000000000000003, 
+        "desc": "Mg"
+      }, 
+      "ALB": {
+        "high": 30.0, 
+        "units": "g/l", 
+        "low": 20.0, 
+        "desc": "Albumin"
+      }, 
+      "CREA": {
+        "high": 175.0, 
+        "units": "umol/l", 
+        "low": 87.0, 
+        "desc": "Creatinine"
+      }, 
+      "ALT": {
+        "high": 80.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "ALT"
+      }, 
+      "UA": {
+        "high": 60.0, 
+        "units": "umol/l", 
+        "low": 0.0, 
+        "desc": "Uric acid"
+      }, 
+      "ALP": {
+        "high": 82.0, 
+        "units": "u/l", 
+        "low": 0.0, 
+        "desc": "Alkaline Phosphotase"
+      }
+    }
+  }, 
+  "Equine": {
+    "E": {
+      "NA": {
+        "high": 148.0, 
+        "units": "mmol/L", 
+        "low": 137.0, 
+        "desc": "Sodium"
+      }, 
+      "K": {
+        "high": 5.0999999999999996, 
+        "units": "mmol/L", 
+        "low": 2.7999999999999998, 
+        "desc": "Pottassium"
+      }, 
+      "CL": {
+        "high": 109.0, 
+        "units": "mmol/L", 
+        "low": 99.0, 
+        "desc": "Chloride"
+      }
+    }
+  }
+}
