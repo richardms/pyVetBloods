@@ -76,12 +76,13 @@ class BloodAnalyserBase(threading.Thread):
         
         if self._raw is not None:
             self._raw.write(rdata)
+            self._raw.flush()
         
         return rdata
 
     def _write(self, d):
         if self._test:
-            print "Write: %s"%d
+            self.info("Write: %s"%d)
         else:
             self._ser.write(d)
 
@@ -104,5 +105,4 @@ class BloodAnalyserBase(threading.Thread):
             
     def testClose(self):
         if self._test:
-            self._test = False
             self._test_wfile.close()
