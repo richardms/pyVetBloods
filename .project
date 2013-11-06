@@ -3,6 +3,7 @@
 	<name>Mythic</name>
 	<comment></comment>
 	<projects>
+		<project>pyVetCom</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

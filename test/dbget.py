@@ -16,6 +16,9 @@ if __name__ == '__main__':
 
     for res in bdb.getNoVetcom():
         print res
-        if res.id:
-            an = vc.Animals(res.id)
-    
+        pid=res.id()
+        if pid:
+            an = vc.Animals(pid)
+            if an is not None:
+                print an.dict()
+                print an.Client().dict()

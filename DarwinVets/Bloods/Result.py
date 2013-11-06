@@ -7,6 +7,7 @@ Created on 24 Oct 2013
 from datetime import datetime
 import json
 import dateutil.parser
+import re
 
 class Result(object):
     '''
@@ -19,7 +20,8 @@ class Result(object):
             'biochem':     {'pretty': "Biochemistry", 'abrv': 'C', 'headliners': []}
             }
     _maxCNlen = 80
-
+    _RE_ID = re.compile('^[0-9]+[0-9]{3}$')
+    
     def __init__(self, srcobj=None):
         '''
         Constructor
@@ -32,6 +34,12 @@ class Result(object):
             self._obj = srcobj
             self._datetime = dateutil.parser.parse(srcobj['datetime'])
 
+    def id(self):
+        if "id" in self._obj:
+            pid = self._obj["id"]
+            if Result._RE_ID.match(pid):
+                return pid
+        return 0 
         
     def setTime(self, time):
         self._datetime = datetime.combine(self._datetime.date(), time)
@@ -105,7 +113,8 @@ class Result(object):
         return cnlist
 
     def objectify(self):
-        self._obj['datetime'] = self._datetime.isoformat()
+        if datetime not in self._obj: 
+            self._obj['datetime'] = self._datetime.isoformat()
         
        
     def __str__(self):
