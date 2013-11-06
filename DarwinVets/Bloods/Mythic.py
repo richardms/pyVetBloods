@@ -18,7 +18,7 @@ class Mythic(BloodAnalyserBase):
     _ACK_RESULT='ACK_RESULT;OK; \r'
 
     _RE_REQ = re.compile('^MYTHIC.+RESULT_READY')
-    _RE_RES = re.compile('^MYTHIC.+RESULT[ ]{0,1};')
+    _RE_RES = re.compile('^MYTHIC.+RESULT[ ]{0,1}$')
     _RE_RES_END = re.compile('^END_RESULT[ ]{0,1}')
 
     def __init__(self, com_port, baudrate):
@@ -26,6 +26,8 @@ class Mythic(BloodAnalyserBase):
         Constructor
         '''
         BloodAnalyserBase.__init__(self, "mythic")
+
+        self._type = "haem"
 
         if com_port=="TEST":
             self._ser = self._testmode()
@@ -80,18 +82,19 @@ class Mythic(BloodAnalyserBase):
     
     def _handle_WAIT_RESULT(self, line):
         if Mythic._RE_RES.match(line) is None:
+            self._state = "WAIT_REQ"
             return
         
-        self._cur_result = Result()
+        self._result = Result.Result()
         self._state = "RECV_RESULT"
         
         return
 
     def _handle_RECV_RESULT(self, line):
-        if Mythic._RE_REQ_END.match(line) is None:
-            self._ser.write(Mythic._ACK_RESULT)
+        if Mythic._RE_RES_END.match(line) is not None:
+            self._write(Mythic._ACK_RESULT)
             self._state = "WAIT_REQ"
-            
+            self._sendResult()
             return
         
         self._parseResult(line)
@@ -107,58 +110,63 @@ class Mythic(BloodAnalyserBase):
         
         return parser[0](self, splitline, parser[1:])
         
-    def _parse_DATE(self, parts):
-        dt = datetime.strptime(parts[1], "%s/%m/%y")
-        self._cur_result.setDate(dt.date())
+    def _parse_DATE(self, parts, extlist):
+        dt = datetime.strptime(parts[1], "%d/%m/%Y")
+        self._result.setDate(dt.date())
         
-    def _parse_TIME(self, parts):
+    def _parse_TIME(self, parts, extlist):
         dt = datetime.strptime(parts[1], "%H:%M:%S")
-        self._cur_result.setTime(dt.time())
+        self._result.setTime(dt.time())
     
-    def _parse_StdParam(self, parts):
-        pass
+    def _parse_StdParam(self, parts, extlist):
+#         self.info("StdParam %s: %s"%(parts[0], parts[1]))
+        self._result.addParam(self._type, parts[0], {
+                    "val": float(parts[1])
+            })
     
-    def _parse_MythicParam(self, parts):
-        pass
+    def _parse_MythicParam(self, parts, extlist):
+        self.info("MythicParam %s: %s"%(parts[0], parts[1]))
+        self._result.addParam("mythic", parts[0], parts[1])
     
-    def _parse_MythicId(self, parts):
-        pass
+    def _parse_MythicId(self, parts, extlist):
+        self.info("ID %s"%(parts[1]))
+        self._result.setPatientID(parts[1])
         
     _LINE_PARSERS={
-                "DATE": (_parse_DATE),
-                "TIME": (_parse_TIME),
-                "MODE": (_parse_MythicParam),
-                "UNIT": (_parse_MythicParam),
-                "SEQ":  (_parse_MythicParam),
-                "SID":  (_parse_MythicParam),
-                "PID":  (_parse_MythicParam),
-                "ID":   (_parse_MythicId),
-                "TYPE": (_parse_MythicParam),
-                "TEST": (_parse_MythicParam),
-                "OPERATOR":   (_parse_MythicParam),
-                "PREL":       (_parse_MythicParam),
-                "CYCLE":      (_parse_MythicParam),
-                "WBC":  (_parse_StdParam),
-                "RBC":  (_parse_StdParam),
-                "HGB":  (_parse_StdParam),
-                "HCT":  (_parse_StdParam),
-                "MCV":  (_parse_StdParam),
-                "MCH":  (_parse_StdParam),
-                "MCHC": (_parse_StdParam),
-                "RDW":  (_parse_StdParam),
-                "PLT":  (_parse_StdParam),
-                "MPV":  (_parse_StdParam),
-                "PCT":  (_parse_StdParam),
-                "PDW":  (_parse_StdParam),
-                "LYM%": (_parse_StdParam),
-                "MON%": (_parse_StdParam),
-                "NEU%": (_parse_StdParam),
-                "EOS%": (_parse_StdParam),
-                "BAS%": (_parse_StdParam),
-                "LYM":  (_parse_StdParam),
-                "MON":  (_parse_StdParam),
-                "NEU":  (_parse_StdParam),
-                "EOS":  (_parse_StdParam),
-                "BAS":  (_parse_StdParam),                
+                "DATE": (_parse_DATE, ),
+                "TIME": (_parse_TIME, ),
+                "MODE": (_parse_MythicParam, ),
+                "UNIT": (_parse_MythicParam, ),
+                "SEQ":  (_parse_MythicParam, ),
+                "SID":  (_parse_MythicParam, ),
+                "PID":  (_parse_MythicParam, ),
+                "ID":   (_parse_MythicId, ),
+                "TYPE": (_parse_MythicParam, ),
+                "TEST": (_parse_MythicParam, ),
+                "OPERATOR":   (_parse_MythicParam, ),
+                "PREL":       (_parse_MythicParam, ),
+                "CYCLE":      (_parse_MythicParam, ),
+                "WBC":  (_parse_StdParam, ),
+                "RBC":  (_parse_StdParam, ),
+                "HGB":  (_parse_StdParam, ),
+                "HCT":  (_parse_StdParam, ),
+                "MCV":  (_parse_StdParam, ),
+                "MCH":  (_parse_StdParam, ),
+                "MCHC": (_parse_StdParam, ),
+                "RDW":  (_parse_StdParam, ),
+                "PLT":  (_parse_StdParam, ),
+                "MPV":  (_parse_StdParam, ),
+                "PCT":  (_parse_StdParam, ),
+                "PDW":  (_parse_StdParam, ),
+                "LYM%": (_parse_StdParam, ),
+                "MON%": (_parse_StdParam, ),
+                "NEU%": (_parse_StdParam, ),
+                "EOS%": (_parse_StdParam, ),
+                "BAS%": (_parse_StdParam, ),
+                "LYM":  (_parse_StdParam, ),
+                "MON":  (_parse_StdParam, ),
+                "NEU":  (_parse_StdParam, ),
+                "EOS":  (_parse_StdParam, ),
+                "BAS":  (_parse_StdParam, ),
                 }
         
