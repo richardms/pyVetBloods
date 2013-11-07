@@ -41,6 +41,9 @@ class Result(object):
                 return pid
         return 0 
         
+    def getDatetime(self):
+        return self._datetime
+    
     def setTime(self, time):
         self._datetime = datetime.combine(self._datetime.date(), time)
         
@@ -62,6 +65,13 @@ class Result(object):
             
         p[key]=value
         
+    def getParam(self, location):
+        loc = location.split('.')
+        val = self._obj
+        for l in loc:
+            val = val[l]
+        return val
+    
     def createCNs(self, refRanges=None):
         cnlist = ["Internal Lab: %s"%(self._datetime.strftime("%H:%M %d/%m/%Y"))]
         rlist = []
