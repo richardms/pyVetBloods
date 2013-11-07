@@ -121,7 +121,8 @@ class Mythic(BloodAnalyserBase):
     def _parse_StdParam(self, parts, extlist):
 #         self.info("StdParam %s: %s"%(parts[0], parts[1]))
         self._result.addParam(self._type, parts[0], {
-                    "val": float(parts[1])
+                    "val": float(parts[1]),
+                    "mark": parts[3]
             })
     
     def _parse_MythicParam(self, parts, extlist):
