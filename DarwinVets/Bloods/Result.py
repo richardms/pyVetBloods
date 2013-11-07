@@ -74,7 +74,7 @@ class Result(object):
     
     def createCNs(self, refRanges=None):
         cnlist = ["Internal Lab: %s"%(self._datetime.strftime("%H:%M %d/%m/%Y"))]
-        rlist = []
+        rtlist = []
         
         for rt in Result.rtypes:
             if rt not in self._obj:
@@ -84,24 +84,22 @@ class Result(object):
             
             resobj = dict(self._obj[rt])
             
-            for r in Result.rtinfo[rt]['headliners']:
-                res = resobj[r]
-                if refRanges is not None:
-                    mark = refRanges.getMark(self)
-                else:
-                    mark = "?"
-                    
-                rstr = "%s: %.2f %s, "%(r, res['val'], mark)
+            rlist = Result.rtinfo[rt]['headliners']
+            rlist.append("**BREAK**")
+            rlist.extend(resobj.keys())
+
+            for r in rlist:
+                if r == "**BREAK**":
+                    if curline != "":
+                        rtlist.append(curline[:-2])
+                        curline = ""
+                    continue
                 
-                curline = curline + rstr
-                del resobj[r]
-            
-            if curline != "":
-                rlist.append(curline[:-2])
-                curline = ""
-            
-            for r in resobj:
-                res = resobj[r]
+                try:
+                    res = resobj[r]
+                except KeyError:
+                    continue
+                
                 if 'mark' in res:
                     mark = res['mark']
                 else:
@@ -116,14 +114,18 @@ class Result(object):
                 rstr = "%s: %.2f%s, "%(r, res['val'], mark)
                 
                 if len(curline) + len(rstr) > Result._maxCNlen-2:
-                    rlist.append(curline[:-2])
+                    rtlist.append(curline[:-2])
                     curline = ""
                     
                 curline = curline + rstr
+                del resobj[r]
+            
                 
-            rlist.append(curline[:-2])
+            if curline != "":
+                rtlist.append(curline[:-2])
+                curline = ""
         
-            for rstr in rlist:
+            for rstr in rtlist:
                 cnlist.append("%s %s"%(rtobj['abrv'], rstr))
         
         return cnlist
