@@ -129,7 +129,7 @@
         "low": 6.5, 
         "desc": "Haemoglobin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 180.0, 
         "units": "umol/l", 
         "low": 116.0, 
@@ -307,7 +307,7 @@
         "low": 6.5, 
         "desc": "Haemoglobin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 180.0, 
         "units": "umol/l", 
         "low": 116.0, 
@@ -661,7 +661,7 @@
         "low": 5.7000000000000002, 
         "desc": "Haemoglobin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 124.0, 
         "units": "umol/l", 
         "low": 87.0, 
@@ -1045,7 +1045,7 @@
         "low": 20.0, 
         "desc": "Albumin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 159.0, 
         "units": "umol/l", 
         "low": 44.0, 
@@ -1245,7 +1245,7 @@
         "low": 7.5, 
         "desc": "Haemoglobin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 159.0, 
         "units": "umol/l", 
         "low": 44.0, 
@@ -1401,7 +1401,7 @@
         "low": 0.0, 
         "desc": "Total Bilirubin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 217.0, 
         "units": "umol/l", 
         "low": 118.0, 
@@ -1599,7 +1599,7 @@
         "low": 0.0, 
         "desc": "Total Bilirubin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 217.0, 
         "units": "umol/l", 
         "low": 118.0, 
@@ -1825,7 +1825,7 @@
         "low": 20.0, 
         "desc": "Albumin"
       }, 
-      "CREA": {
+      "CRE": {
         "high": 175.0, 
         "units": "umol/l", 
         "low": 87.0, 
