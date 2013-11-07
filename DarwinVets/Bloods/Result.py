@@ -69,7 +69,7 @@ class Result(object):
         for rt in Result.rtypes:
             if rt not in self._obj:
                 continue
-            
+            rtobj = Result.rtinfo[rt]
             curline = ""
             
             resobj = dict(self._obj[rt])
@@ -92,12 +92,18 @@ class Result(object):
             
             for r in resobj:
                 res = resobj[r]
-                if refRanges is not None:
-                    mark = refRanges.getMark(self)
+                if 'mark' in res:
+                    mark = res['mark']
                 else:
-                    mark = "?"
-                    
-                rstr = "%s: %.2f %s, "%(r, res['val'], mark)
+                    if refRanges is not None:
+                        mark = refRanges.getMark(self.species(), rtobj['abrv'], r, res['val'])
+                    else:
+                        mark = "?"
+                
+                if mark != "":
+                    mark = ' '+mark
+                
+                rstr = "%s: %.2f%s, "%(r, res['val'], mark)
                 
                 if len(curline) + len(rstr) > Result._maxCNlen-2:
                     rlist.append(curline[:-2])
@@ -108,7 +114,7 @@ class Result(object):
             rlist.append(curline[:-2])
         
             for rstr in rlist:
-                cnlist.append("%s %s"%(Result.rtinfo[rt]['abrv'], rstr))
+                cnlist.append("%s %s"%(rtobj['abrv'], rstr))
         
         return cnlist
 
@@ -116,7 +122,10 @@ class Result(object):
         if datetime not in self._obj: 
             self._obj['datetime'] = self._datetime.isoformat()
         
-       
+    
+    def species(self):
+        return "CANINE"
+    
     def __str__(self):
         rstr = "RESULT@"+self._datetime.isoformat()+"\n"
         rstr = rstr + json.dumps(self._obj)
