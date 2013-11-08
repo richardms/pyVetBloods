@@ -25,11 +25,11 @@ if __name__ == '__main__':
     fname = sys.argv[1]
     
     if re.match('mythic-', fname):
-        analyser = Mythic("/dev/ttyUSB0", 115200)
+        analyser = Mythic("TEST", 115200)
     elif re.match('scEZ', fname):
-        analyser = SpotChemEZ("/dev/ttyUSB1", 9600)
+        analyser = SpotChemEZ("TEST", 9600)
     elif re.match('scEL', fname):
-        analyser = SpotChemEL("/dev/ttyUSB2")
+        analyser = SpotChemEL("TEST")
     else:
         print "Unknown analyser for '%s'"%fname
         sys.exit(1)
