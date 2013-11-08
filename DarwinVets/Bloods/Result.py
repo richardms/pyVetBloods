@@ -33,6 +33,7 @@ class Result(object):
         else:
             self._obj = srcobj
             self._datetime = dateutil.parser.parse(srcobj['datetime'])
+            self._datetime_recv = self._datetime
 
     def id(self):
         if "id" in self._obj:
@@ -132,7 +133,7 @@ class Result(object):
 
     def objectify(self):
         if datetime not in self._obj: 
-            self._obj['datetime'] = self._datetime.isoformat()
+            self._obj['datetime'] = self._datetime_recv.isoformat()
         
     
     def species(self):
