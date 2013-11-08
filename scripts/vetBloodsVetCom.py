@@ -5,6 +5,8 @@ Created on 6 Nov 2013
 '''
 import logging
 from DarwinVets.Bloods.BloodsDB import BloodsDB
+from DarwinVets.Bloods.RefRanges import RefRanges
+
 from PyVetCom import PyVetCom 
 import time
 
@@ -18,9 +20,9 @@ def doVetcom(bdb, vc):
                 res.addParam("vetcom", "cl", an.Client().dict())
                 res.save()
 
-def doCreateNotes(bdb, vc):
+def doCreateNotes(bdb, vc, refranges=None):
     for res in bdb.getNoNotes():
-        notes = res.createCNs()
+        notes = res.createCNs(refranges)
         res.addParam("notes", "list", notes)
         res.addParam("notes", "trfrd", 0)
         res.save()
@@ -59,12 +61,12 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
 
     bdb = BloodsDB("http://10.0.1.15:5984/")
-    
+    refranges = RefRanges('refranges.json')
     vc = PyVetCom()
 
     while True:
         doVetcom (bdb, vc)
-        doCreateNotes(bdb, vc)
+        doCreateNotes(bdb, vc, refranges)
         doWriteNotes(bdb, vc)
         time.sleep(30)
         
