@@ -25,6 +25,7 @@ if __name__ == '__main__':
     fname = sys.argv[1]
     
     if re.match('mythic-', fname):
+        print "Mythic"
         analyser = Mythic("/dev/ttyUSB0", 115200)
     elif re.match('scEZ', fname):
         analyser = SpotChemEZ("/dev/ttyUSB1", 9600)
@@ -37,17 +38,17 @@ if __name__ == '__main__':
     analyser.registerResultHandler(rhandler)
     
     analyser.start()
-    
-    for dfname in datafiles:
-        dfile = open(dfname, "rb")
+
+    print "Reading %s"%fname    
+    dfile = open(fname, "rb")
         
-        while True:
-            d=dfile.read(16)
-            if len(d) == 0:
-                break
-            analyser.testWrite(d)
+    while True:
+        d=dfile.read(16)
+        if len(d) == 0:
+            break
+        analyser.testWrite(d)
             
-        dfile.close()
+    dfile.close()
     
     time.sleep(2)
     
