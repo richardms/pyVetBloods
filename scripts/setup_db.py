@@ -5,7 +5,10 @@ dbname="vetbloods"
 
 server = couchdb.Server(dburl)
 
-server.delete(dbname)
+try:
+    server.delete(dbname)
+except:
+    pass
 
 try:
     db = server[dbname]
