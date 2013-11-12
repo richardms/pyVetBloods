@@ -21,6 +21,8 @@ class Mythic(BloodAnalyserBase):
     _RE_RES = re.compile('^MYTHIC.+RESULT[ ]{0,1}$')
     _RE_RES_END = re.compile('^END_RESULT[ ]{0,1}')
 
+    _RE_PID = re.compile('^[1-9][0-9]{3,}$')
+
     def __init__(self, com_port, baudrate):
         '''
         Constructor
@@ -119,19 +121,42 @@ class Mythic(BloodAnalyserBase):
         self._result.setTime(dt.time())
     
     def _parse_StdParam(self, parts, extlist):
+        valstr = parts[1]
 #         self.info("StdParam %s: %s"%(parts[0], parts[1]))
-        self._result.addParam(self._type, parts[0], {
-                    "val": float(parts[1]),
-                    "mark": parts[3]
+        try:
+            val = float(valstr)
+            if parts[2] != "":
+                mark = "REJECTED"
+            else:
+                mark = parts[3]
+                
+            self._result.addParam(self._type, parts[0], {
+                    "val": val,
+                    "mark": mark
             })
+        except ValueError:
+            self.warn("No value for %s"%valstr)
+            if (valstr == "....."):
+                mark = "INVALID"
+            else:
+                mark = "TOO HIGH"
+            self._result.addParam(self._type, parts[0], {
+                    "mark": mark
+            })
+
     
     def _parse_MythicParam(self, parts, extlist):
         self.info("MythicParam %s: %s"%(parts[0], parts[1]))
         self._result.addParam("mythic", parts[0], parts[1])
     
     def _parse_MythicId(self, parts, extlist):
-        self.info("ID %s"%(parts[1]))
-        self._result.setPatientID(parts[1])
+        self.info("Try ID %s"%(parts[1]))
+        if Mythic._RE_PID.match(parts[1]):
+            self.info("Set patient ID %s"%(parts[1]))
+            self._result.setPatientID(parts[1])
+        else:
+            self._result.addParam("mythic", "id", parts[1])
+    
         
     _LINE_PARSERS={
                 "DATE": (_parse_DATE, ),
@@ -141,7 +166,7 @@ class Mythic(BloodAnalyserBase):
                 "SEQ":  (_parse_MythicParam, ),
                 "SID":  (_parse_MythicParam, ),
                 "PID":  (_parse_MythicId, ),
-                "ID":   (_parse_MythicParam, ),
+                "ID":   (_parse_MythicId, ),
                 "TYPE": (_parse_MythicParam, ),
                 "TEST": (_parse_MythicParam, ),
                 "OPERATOR":   (_parse_MythicParam, ),

@@ -112,7 +112,10 @@ class Result(object):
                 if mark != "":
                     mark = ' '+mark
                 
-                rstr = "%s: %.2f%s, "%(r, res['val'], mark)
+                try:
+                    rstr = "%s: %.2f%s, "%(r, res['val'], mark)
+                except KeyError:
+                    rstr = "%s:%s, "%(r, mark)
                 
                 if len(curline) + len(rstr) > Result._maxCNlen-2:
                     rtlist.append(curline[:-2])
