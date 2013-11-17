@@ -10,30 +10,41 @@ from DarwinVets.Bloods.RefRanges import RefRanges
 from PyVetCom import PyVetCom 
 import time
 
-def doVetcom(bdb, vc):
+def getVetcom(dbrefs):
+    vc = dbrefs['vc']
+    if vc is None:
+        vc = PyVetCom()
+    return vc
+
+def doVetcom(dbrefs):
+    bdb = dbrefs['bdb']
     for res in bdb.getNoVetcom():
         pid=res.id()
         if pid:
+            vc = getVetcom(dbrefs)
             an = vc.Animals(pid)
             if an is not None:
                 res.addParam("vetcom", "an", an.dict())
                 res.addParam("vetcom", "cl", an.Client().dict())
                 res.save()
 
-def doCreateNotes(bdb, vc, refranges=None):
+def doCreateNotes(dbrefs, refranges=None):
+    bdb = dbrefs['bdb']
     for res in bdb.getNoNotes():
         notes = res.createCNs(refranges)
         res.addParam("notes", "list", notes)
         res.addParam("notes", "trfrd", 0)
         res.save()
         
-def doWriteNotes(bdb, vc):
+def doWriteNotes(dbrefs):
+    bdb = dbrefs['bdb']
     for res in bdb.getNotesNotTrfrd():
         try:
             anno = res.getParam('vetcom.an.ANNO')
         except KeyError:
             continue
         
+        vc = getVetcom(dbrefs)
         date = vc.convDate(res.getDatetime())
         lineno = vc.Notes().                          \
             eq('ANNO', anno).                         \
@@ -64,11 +75,12 @@ if __name__ == '__main__':
 
     refranges = RefRanges('refranges.json')
 
-    vc = PyVetCom()
-
     while True:
-        doVetcom (bdb, vc)
-        doCreateNotes(bdb, vc, refranges)
-        doWriteNotes(bdb, vc)
+        dbrefs = {"bdb": bdb, "vc": None}
+        doVetcom (dbrefs)
+        doCreateNotes(dbrefs, refranges)
+        doWriteNotes(dbrefs)
+        if dbrefs['vc'] is not None:
+            dbrefs['vc'].close()
         time.sleep(30)
         
