@@ -78,7 +78,7 @@ def doWriteNotes(dbrefs):
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
 
-    bdb = BloodsDB("http://10.0.1.15:5984/")
+    bdb = BloodsDB("http://192.168.3.117:5984/")
 
     refranges = RefRanges('refranges.json')
 
