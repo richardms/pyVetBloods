@@ -89,5 +89,6 @@ if __name__ == '__main__':
         doWriteNotes(dbrefs)
         if dbrefs['vc'] is not None:
             dbrefs['vc'].close()
+            dbrefs['vc'] = None
         time.sleep(30)
         
