@@ -14,6 +14,7 @@ def getVetcom(dbrefs):
     vc = dbrefs['vc']
     if vc is None:
         vc = PyVetCom()
+        dbrefs['vc'] = vc
     return vc
 
 def doVetcom(dbrefs):
@@ -90,5 +91,5 @@ if __name__ == '__main__':
         if dbrefs['vc'] is not None:
             dbrefs['vc'].close()
             dbrefs['vc'] = None
-        time.sleep(30)
+        time.sleep(120)
         
