@@ -76,7 +76,7 @@ class Mythic(BloodAnalyserBase):
     
     def _handle_WAIT_REQ(self, line):
         if Mythic._RE_REQ.match(line) is None:
-            return
+            return self._handle_WAIT_RESULT(line) # Check if it's actually a result
         self._write(Mythic._ACK_RES_READY)
         self._state = "WAIT_RESULT"
         
