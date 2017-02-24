@@ -22,9 +22,9 @@ if __name__ == '__main__':
 
     bdb = BloodsDB()
 
-    mythic = Mythic("/dev/ttyUSB0", 115200)
-    spotchemez = SpotChemEZ("/dev/ttyUSB1", 9600)
-    spotchemel = SpotChemEL("/dev/ttyUSB2")
+    mythic = Mythic("/dev/serial/by-path/pci-0000:00:12.0-usb-0:5:1.0-port0", 115200)
+    spotchemez = SpotChemEZ("/dev/serial/by-path/pci-0000:00:12.0-usb-0:2:1.0-port0", 9600)
+    spotchemel = SpotChemEL("/dev/serial/by-path/pci-0000:00:12.0-usb-0:4:1.0-port0")
     
     mythic.registerResultHandler(rhandler)
     spotchemez.registerResultHandler(rhandler)
