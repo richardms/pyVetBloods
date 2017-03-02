@@ -30,6 +30,8 @@ class SpotChemEZ(SpotChemBase):
     
     # UNTESTED!!!
     def _handleBlock_fmt1(self, block, endchar):
+        self._result.addRawLine(block)
+
         parts=[ s.strip() for s in block.split('\n')]
         
         # Test for date line
@@ -66,6 +68,8 @@ class SpotChemEZ(SpotChemBase):
         return (endchar == "\003")   
     
     def _handleBlock_fmt2(self, block, endchar):
+        self._result.addRawLine(block)
+
         pid  = block[:10].strip()
         maxc = int(block[13:15].strip())
         cnt = int(block[16:18].strip())

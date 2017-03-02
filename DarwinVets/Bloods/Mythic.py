@@ -104,6 +104,8 @@ class Mythic(BloodAnalyserBase):
         return
     
     def _parseResult(self, line):
+        self._result.addRawLine(line)
+
         splitline=[ s.strip() for s in line.split(';') ]
         try:
             parser=Mythic._LINE_PARSERS[splitline[0]]

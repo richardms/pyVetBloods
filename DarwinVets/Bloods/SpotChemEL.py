@@ -19,6 +19,8 @@ class SpotChemEL(SpotChemBase):
         self._type = "electrolyte"
     
     def _handleBlock(self, block, endchar):
+        self._result.addRawLine(block)
+
         dt  = block[0:14].strip()
         dt  = datetime.strptime(dt, "%y/%m/%d %H:%M")
         pid  = block[19:29].strip()

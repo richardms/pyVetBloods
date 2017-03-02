@@ -3,7 +3,7 @@ import couchdb
 
 class BloodsDB():
     
-    def __init__(self, dburl="http://127.0.0.1:5984/", dbname="vetbloods"):
+    def __init__(self, dburl="http://127.0.0.1:5984/", dbname="vetbloods_raw"):
         self._server = couchdb.Server(dburl)
         self._db = self._server[dbname]
         

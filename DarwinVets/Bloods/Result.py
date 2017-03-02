@@ -15,7 +15,7 @@ class Result(object):
     '''
     rtypes=['haem', 'electrolyte', 'biochem']
     rtinfo={
-            'haem':        {'pretty':  "Haemotology", 'abrv': 'H', 'headliners': ['HCT', 'PLT', 'WBC']},
+            'haem':        {'pretty':  "Haematology", 'abrv': 'H', 'headliners': ['HCT', 'PLT', 'WBC']},
             'electrolyte': {'pretty':  "Electrolyte", 'abrv': 'E', 'headliners': ['BUN']},
             'biochem':     {'pretty': "Biochemistry", 'abrv': 'C', 'headliners': []}
             }
@@ -34,6 +34,8 @@ class Result(object):
             self._obj = srcobj
             self._datetime = dateutil.parser.parse(srcobj['datetime'])
             self._datetime_recv = self._datetime
+
+        self._raw = []
 
     def id(self):
         if "id" in self._obj:
@@ -65,6 +67,9 @@ class Result(object):
             self._obj[part] = p
             
         p[key]=value
+
+    def addRawLine(self, line):
+        self._raw.append(line)
         
     def getParam(self, location):
         loc = location.split('.')
@@ -137,7 +142,8 @@ class Result(object):
     def objectify(self):
         if datetime not in self._obj: 
             self._obj['datetime'] = self._datetime_recv.isoformat()
-        
+
+        self._obj['raw'] = self._raw
     
     def species(self):
         return "CANINE"
